@@ -62,7 +62,60 @@
               <p>I learned that the best way to fix a circuit that is not wokring is to begin at the starting point of the circuit, then just walk through it and see if there are any flaws (my usual mistake is not putting the wires in the right row).</p>
               <p>My favorite part was the strange ghost code...at the beginning of the robot's routine, the robot follow some weird ghost code, but it is strangely to the music, so I'm kind of okay with it. Still don't know where it comes from though</p>
               <p>Manuela Veloso and Ayanna Howard definitely use a lot of outputs, including sound, touch, display, lights, sensors. Definitely way more than we use!</p>              
-                                                                                                                                                    
+        <h2 style="text-align:left">Reflection (7/14/17)</h2>
+              <p>The Escape Bot project was so fun! Our process involved just going for it, really...we set up some quick code with what we thought would work and we just kept testing our bot to see where the trouble areas were. So we would test, then code, then test, then code. P.S. Never forget the power of the reset button.</p>                     
+              <img src="https://vanillz.github.io/portfolio/IMG_2786.JPG" alt=sensor width="250" height="350">
+              <p>#include <Servo.h>
+
+int rightWhiskerPin= 9 ;
+int leftWhiskerPin= 7 ; 
+int rightWhiskerState;
+int leftWhiskerState;
+Servo servoRight;
+Servo servoLeft;
+
+
+void setup() {
+pinMode(rightWhiskerPin, INPUT);
+pinMode(leftWhiskerPin, INPUT);
+servoLeft.attach(12);
+servoRight.attach(13);
+}
+
+
+void loop() {
+byte whiskerStateLeft = digitalRead(9);
+byte whiskerStateRight = digitalRead(7);
+
+if(whiskerStateLeft == 1)
+ { servoLeft.writeMicroseconds(-3000);
+  servoRight.writeMicroseconds(3000);
+  }
+  else if (whiskerStateLeft == 0)
+  {servoRight.writeMicroseconds(-3000);
+  servoLeft.writeMicroseconds(3000);
+  delay(2000);
+  servoRight.writeMicroseconds(600);
+  servoLeft.writeMicroseconds(0);
+  delay(1000);
+  }
+
+  
+if(whiskerStateRight == 1)
+ { servoLeft.writeMicroseconds(-3000);
+  servoRight.writeMicroseconds(3000);
+  }
+  else if (whiskerStateRight == 0)
+  {
+  servoLeft.writeMicroseconds(3000);
+  servoRight.writeMicroseconds(-3000);
+  delay(2000);
+  servoLeft.writeMicroseconds(-600);
+  servoRight.writeMicroseconds(0);
+  delay(1000);} 
+
+}</p>
+                                                                                                             
 </body>
 </html>                
    
