@@ -16,6 +16,14 @@
                           margin-left: auto;
                           margin-right: auto;
                           width: 50%;
+            li {
+               margin-bottom: 10px;
+             }
+             li button {
+               font-size: 8px;
+               margin-left: 20px;
+               color: #666;
+             }
                      }
               </style>     
        </head>
@@ -32,6 +40,44 @@
               <p>Dancing. I really, really like dancing.<img src="https://s-media-cache-ak0.pinimg.com/originals/cb/7b/f6/cb7bf6c7dc0097b835edc44a97bed758.gif" alt=dancing cat width="300" height="500" align="middle">And, I LOVE this cat (Borrowed from Gif Images Download).</p>
                      <iframe width="70%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/195970066&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
               <p>And this is my favorite song.</p>
+        <h1>what do you like?</h1>
+
+    <div>
+      <label for="item">type here!</label>
+      <input type="text" name="item" id="item">
+      <button><3</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+     var list = document.querySelector('ul');
+     var new_item = document.querySelector('input');
+     var button = document.querySelector('button');
+     
+     button.onclick = function() {
+        var likes = input.value;
+        input.value = '';
+       
+        var list2 = document.querySelector('li');
+        var words = document.querySelector('span');
+        var btn = document.querySelector('button');
+        
+        list2.appendChild(words);
+        words.textcontent = likes;
+     }
+//         list2.appendChild(btn);
+//         btn.textcontent = 'delete';
+//         list.appendChild(list2);
+       
+//      btn.onclick = function();
+//         list.removeChild(list2);
+       
+       
+         
+    </script>
         <h2 style="text-align:left">what do i not like? :(</h2>
               <p>Rude people...and changing lanes when there is traffic...and coffee breath (which I currently have as I'm writing this. Sorry).</p>
         <h2 style="text-align:left">fun fact</h2>
